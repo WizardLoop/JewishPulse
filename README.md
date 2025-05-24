@@ -1,36 +1,137 @@
-# JewishPulse
+# ✨ JewishPulse
 
-## Description
-A robot for changing the Telegram group's permissions at the entrance and exit of Shabbat.
+**JewishPulse** is a smart Telegram bot that connects users to daily Jewish life — from 📜 Daf Yomi to 🕯 Shabbat times and 🌍 location-based Halachic data.
 
-_You can check our bot [here](https://t.me/JewishPulseBot)._
-##
-# Installation
+> Time. Holiness. Connection.
 
-1. **Clone the Repository** 
-```bash
-git clone https://github.com/wizardloop/JewishPulse.git
-```
-
-2. **Configure Environment Variables**  
-   Rename the example `.env.example` file to `.env`:
-   ```bash
-   mv .env.example .env
-   ```
-   Then, edit the `.env` file to add your `BOT_TOKEN`, `API_ID`, and `API_HASH`:
-   ```
-   API_ID=your_api_id_here
-   API_HASH=your_api_hash_here
-   BOT_TOKEN=your_bot_token_here
-   ADMIN=your_username_or_id_here
-   ```
-
-3. **Run the Bot**  
-##
-
-
-## Credits
-
-This project was created by [@WizardLoop](https://t.me/wizardloop).
+[![AGPL License](https://img.shields.io/badge/license-AGPL--3.0-blue.svg)](LICENSE)
+[![Made with ❤️ in Israel](https://img.shields.io/badge/Made%20with-%E2%9D%A4%EF%B8%8F%20in%20Israel-blue)](https://github.com/WizardLoop/JewishPulse)
+[![Docker Ready](https://img.shields.io/badge/docker-ready-blue.svg)](https://www.docker.com/)
+[![PHP 8.2+](https://img.shields.io/badge/PHP-8.2%2B-blue)](https://www.php.net/)
 
 ---
+
+## 📦 Features
+
+- 📍 Inline location-based Shabbat times & Daf Yomi
+- 🕯 Real-time candle lighting info
+- 📚 Daily Daf Yomi updates via Hebcal
+- ⚙️ Built using `MadelineProto` & PHP Coroutine Engine
+- 🌐 Multilingual and Geonames-integrated search
+
+---
+
+## 🚀 Quickstart Guide
+
+### 1️⃣ Clone the repository
+
+```bash
+git clone https://github.com/WizardLoop/JewishPulse.git
+cd JewishPulse
+```
+
+### 2️⃣ Install dependencies
+
+Install PHP dependencies using Docker:
+
+```bash
+make composer-install
+```
+
+This runs `composer install` inside the container.
+
+### 3️⃣ Launch the bot
+
+```bash
+make up
+```
+
+The bot will start running in the background.
+
+### 🔍 View logs
+
+```bash
+make logs
+```
+
+Live log output of your bot.
+
+---
+
+## ⚙️ Common Commands
+
+| Command              | Description                                  |
+|----------------------|----------------------------------------------|
+| `make build`         | Build the Docker image (after Dockerfile change) |
+| `make up`            | Start the bot in the background              |
+| `make down`          | Stop and remove the bot container            |
+| `make restart`       | Restart the bot quickly                      |
+| `make logs`          | View real-time bot logs                      |
+| `make sh`            | Access shell inside the Docker container     |
+| `make composer-dump` | Reload Composer autoload                     |
+
+---
+
+## 🔐 Environment Configuration
+
+Copy the `.env.example` to `.env` and customize as needed:
+
+```bash
+cp .env.example .env
+```
+
+Fill in values like:
+
+- `BOT_TOKEN`
+- `ADMIN_ID`
+- `GEONAMES_USERNAME`
+
+---
+
+## 🌐 Inline Location Search
+
+Type `@YourBotUsername your_city_name` in any chat to:
+
+- Get your Daf Yomi for today
+- Set Shabbat timezones per user
+
+---
+
+## 🛠 Advanced Usage
+
+- 📡 Geolocation-based Halachic times (via GeoNames API)
+- 🔄 Persistent storage of user location
+- 🕍 Personalized Zmanim via Hebcal API
+- 🧪 Fully asynchronous using `Amp` and `MadelineProto`
+
+---
+
+## 🤝 Contributing
+
+Pull requests are welcome! To contribute:
+
+1. Fork the repo
+2. Create a feature branch: `git checkout -b feature/my-feature`
+3. Commit your changes: `git commit -m 'Add my feature'`
+4. Push to the branch: `git push origin feature/my-feature`
+5. Open a PR 🙌
+
+---
+
+## 📄 License
+
+This project is licensed under the **GNU Affero General Public License v3.0 (AGPL-3.0)**.
+
+See [`LICENSE`](LICENSE) for details.
+
+---
+
+## 🙏 Acknowledgments
+
+- [Hebcal.com](https://www.hebcal.com/home/developer-apis) for Jewish calendar data
+- [GeoNames.org](https://www.geonames.org/export/web-services.html) for geographical location support
+- [MadelineProto](https://docs.madelineproto.xyz/) for powerful Telegram API interface
+
+---
+
+📫 Questions, suggestions, feedback? Open an [issue](https://github.com/WizardLoop/JewishPulse/issues) or contact @WizardLoop.

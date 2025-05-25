@@ -69,6 +69,9 @@ Live log output of your bot.
 | `make logs`          | View real-time bot logs                      |
 | `make sh`            | Access shell inside the Docker container     |
 | `make composer-dump` | Reload Composer autoload                     |
+| `make test`          | Run PHPUnit tests                            |
+| `make phpcs`         | Run PHP_CodeSniffer checks                   |
+| `make cs-fix`        | Fix code style using PHP-CS-Fixer            |
 
 ---
 
@@ -94,6 +97,36 @@ Type `@YourBotUsername your_city_name` in any chat to:
 
 - Get your Daf Yomi for today
 - Set Shabbat timezones per user
+
+---
+
+## 🧪 Testing & Code Quality
+
+This project uses **PHPUnit** for unit testing and **PHP_CodeSniffer** / **PHP-CS-Fixer** for code style enforcement.
+
+### ✅ Running Tests
+
+To run all unit tests:
+
+```bash
+make test
+```
+
+Tests live in the `/tests` directory and follow PSR standards.
+
+### 🎨 Code Style
+
+Run PHP_CodeSniffer to check your code:
+
+```bash
+make phpcs
+```
+
+Auto-fix code style issues using PHP-CS-Fixer:
+
+```bash
+make cs-fix
+```
 
 ---
 

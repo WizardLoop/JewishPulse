@@ -23,14 +23,26 @@
 
 ## 🚀 Quickstart Guide
 
-### 1️⃣ Clone the repository
+### 🧪 Automatic Installation (recommended)
+
+Use the following command to clone and install the bot automatically:
+
+```bash
+curl -sSL https://raw.githubusercontent.com/WizardLoop/JewishPulse/main/install.sh | bash
+```
+
+---
+
+### 🛠 Manual Setup
+
+#### 1️⃣ Clone the repository
 
 ```bash
 git clone https://github.com/WizardLoop/JewishPulse.git
 cd JewishPulse
 ```
 
-### 2️⃣ Install dependencies
+#### 2️⃣ Install dependencies
 
 Install PHP dependencies using Docker:
 
@@ -40,7 +52,7 @@ make composer-install
 
 This runs `composer install` inside the container.
 
-### 3️⃣ Launch the bot
+#### 3️⃣ Launch the bot
 
 ```bash
 make up
@@ -48,7 +60,7 @@ make up
 
 The bot will start running in the background.
 
-### 🔍 View logs
+#### 🔍 View logs
 
 ```bash
 make logs
@@ -138,6 +150,7 @@ make cs-fix
 - 🔄 Persistent storage of user location
 - 🕍 Personalized Zmanim via Hebcal API
 - 🧪 Fully asynchronous using `Amp` and `MadelineProto`
+- ⚙️ GitHub Actions CI with: PHPUnit, PHPCS, CS-Fixer, locale checks, bot output simulation
 
 ---
 

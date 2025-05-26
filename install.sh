@@ -42,6 +42,13 @@ make composer-install
 echo "🚀 Starting the bot..."
 make up
 
+# 7. Gitattributes normalization (optional)
+echo "📐 Normalizing line endings with .gitattributes..."
+git add . && git commit -m "chore: normalize line endings" || true
+
+# 8. Add to .gitattributes if not present
+grep -qxF 'install.sh text eol=lf' .gitattributes || echo 'install.sh text eol=lf' >> .gitattributes
+
 echo "\n✅ Installation complete!"
 echo ""  
 echo "To check logs:    ${bold}make logs${normal}"

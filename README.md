@@ -60,18 +60,20 @@ Live log output of your bot.
 
 ## ⚙️ Common Commands
 
-| Command              | Description                                  |
-|----------------------|----------------------------------------------|
-| `make build`         | Build the Docker image (after Dockerfile change) |
-| `make up`            | Start the bot in the background              |
-| `make down`          | Stop and remove the bot container            |
-| `make restart`       | Restart the bot quickly                      |
-| `make logs`          | View real-time bot logs                      |
-| `make sh`            | Access shell inside the Docker container     |
-| `make composer-dump` | Reload Composer autoload                     |
-| `make test`          | Run PHPUnit tests                            |
-| `make phpcs`         | Run PHP_CodeSniffer checks                   |
-| `make cs-fix`        | Fix code style using PHP-CS-Fixer            |
+| Command                  | Description                                      |
+|--------------------------|--------------------------------------------------|
+| `make build`             | Build the Docker image                          |
+| `make up`                | Start the bot in the background                |
+| `make down`              | Stop and remove the bot container              |
+| `make restart`           | Restart the bot quickly                        |
+| `make logs`              | View real-time bot logs                        |
+| `make sh`                | Access shell inside the Docker container       |
+| `make composer-dump`     | Reload Composer autoload                       |
+| `make test`              | Run PHPUnit tests                              |
+| `make phpcs`             | Run PHP_CodeSniffer checks                     |
+| `make cs-fix`            | Fix code style using PHP-CS-Fixer              |
+| `make clean`             | Clean up cache, data, and vendor folders       |
+| `make gitattributes-check` | Normalize line endings using .gitattributes |
 
 ---
 

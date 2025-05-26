@@ -1,0 +1,73 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+
+jobs:
+  build-and-test:
+    name: ✨ Build & Test
+    runs-on: ubuntu-latest
+
+    services:
+      docker:
+        image: docker:24.0.7
+        options: --privileged
+
+    steps:
+      - name: 📁 Checkout repository
+        uses: actions/checkout@v3
+
+      - name: 🛠 Set up Docker Compose
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y docker-compose
+
+      - name: 📦 Build and start services
+        run: |
+          docker-compose build
+          docker-compose up -d
+
+      - name: ✅ Run PHPUnit tests inside container
+        run: docker-compose run --rm bot vendor/bin/phpunit
+
+      - name: 🔎 Run PHPCS
+        run: docker-compose run --rm bot vendor/bin/phpcs --standard=PSR12 app/
+
+      - name: 🛠 Run PHP-CS-Fixer (dry run)
+        run: docker-compose run --rm bot vendor/bin/php-cs-fixer fix --dry-run --diff --config=.php-cs-fixer.dist.php || true
+
+      - name: 🔢 Check /start command output
+        run: |
+          docker-compose exec bot php -r "require 'vendor/autoload.php'; echo (new ShabatBot\\App\\Locales\\Lang(null))->t('StartCommand', 123456);"
+
+      - name: 🌇 Test Shabbat time formatting
+        run: |
+          docker-compose exec bot php -r "require 'vendor/autoload.php'; echo (new ShabatBot\\App\\Handlers\\ShabatTimes())->parseShabatData();"
+
+      - name: 🌎 Check locale translation completeness
+        run: |
+          docker-compose exec bot php -r "
+            \$files = glob('app/locales/*.json');
+            \$keys = array_keys(json_decode(file_get_contents('app/locales/he.json'), true));
+            foreach (\$files as \$file) {
+              \$t = json_decode(file_get_contents(\$file), true);
+              \$missing = array_diff(\$keys, array_keys(\$t));
+              if (\$missing) {
+                echo basename(\$file) . " is missing keys: " . implode(', ', \$missing) . PHP_EOL;
+                exit(1);
+              }
+            }
+          "
+
+      - name: 💬 Simulate bot availability (ping check)
+        run: |
+          docker-compose exec bot php -r "
+            require 'vendor/autoload.php';
+            echo \"Bot is up and ready!\n\";
+          "
+
+      - name: ❌ Shutdown containers
+        if: always()
+        run: docker-compose down

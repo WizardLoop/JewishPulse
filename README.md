@@ -1,10 +1,10 @@
-![Sticker](assets/jewishpulse.gif)
+[![Sticker](assets/jewishpulse.gif)](https://github.com/WizardLoop/JewishPulse)
 
-# ✨ JewishPulse
+# <a href="https://github.com/WizardLoop/JewishPulse" target="_blank"><img src="assets/jewishpulse.gif" alt="✨" width="24" style="vertical-align:middle;"></a> JewishPulse
 
 **JewishPulse** is a smart Telegram bot that connects users to daily Jewish life — from 📜 Daf Yomi to 🕯 Shabbat times and 🌍 location-based Halachic data.
 
-> Time. Holiness. Connection.
+> <a href="https://github.com/WizardLoop/JewishPulse" target="_blank"><img src="assets/jewishpulse.gif" alt="✨" width="16" style="vertical-align:middle;"></a> Time. Holiness. Connection.
 
 [![AGPL License](https://img.shields.io/badge/license-AGPL--3.0-blue.svg)](LICENSE)
 [![Made with ❤️ in Israel](https://img.shields.io/badge/Made%20with-%E2%9D%A4%EF%B8%8F%20in%20Israel-blue)](https://github.com/WizardLoop/JewishPulse)
@@ -13,6 +13,8 @@
 
 [![Telegram](https://img.shields.io/badge/Channel-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/JewishPulse)
 [![Telegram](https://img.shields.io/badge/Group-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/Jewish_Pulse)
+
+[![Telegram](https://img.shields.io/badge/Official%20Bot-000000?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/JewishPulseBot)
 
 ---
 

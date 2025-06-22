@@ -1,4 +1,4 @@
-![JewishPulse Animation](https://github.com/wizardloop/JewishPulse/raw/main/assets/JewishPulse.gif)
+<img src="https://github.com/wizardloop/JewishPulse/raw/main/assets/JewishPulse.png" width="300" height="300" />
 
 # ✡️✨ JewishPulse
 

@@ -1,0 +1,31 @@
+name: GitHub Release to Telegram
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  send-to-telegram:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.0'
+
+      - name: Install dependencies
+        run: |
+          composer install
+
+      - name: Send release info to Telegram
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          GITHUB_REPO_OWNER: ${{ secrets.REPO_OWNER }}
+          GITHUB_REPO_NAME: ${{ secrets.REPO_NAME }}
+        run: |
+          php webhook.php

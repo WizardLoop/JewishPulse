@@ -44,7 +44,7 @@ cd JewishPulse
 
 Install PHP dependencies using Docker:
 ```bash
-composer install
+docker-compose run --rm composer install
 ```
 
 #### 3️⃣ Launch the bot

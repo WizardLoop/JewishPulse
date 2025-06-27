@@ -15,7 +15,6 @@ use Amp\File;
 use function Amp\File\write;
 use function Amp\File\read;
 use function Amp\File\exists;
-use function Amp\File\mkdir;
 
 class Handlers
 {

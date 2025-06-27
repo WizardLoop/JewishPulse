@@ -31,19 +31,7 @@
 
 ---
 
-## 🚀 Quickstart Guide
-
-### 🧪 Automatic Installation (recommended)
-
-Use the following command to clone and install the bot automatically:
-
-```bash
-curl -sSL https://raw.githubusercontent.com/WizardLoop/JewishPulse/main/install.sh | bash
-```
-
----
-
-### 🛠 Manual Setup
+### 🛠 Installation Setup
 
 #### 1️⃣ Clone the repository
 

@@ -1,5 +1,7 @@
 <img src="https://github.com/wizardloop/JewishPulse/raw/main/assets/JewishPulse.png" width="300" height="300" />
 
+---
+
 # ✡️✨ JewishPulse
 
 **JewishPulse** is a smart Telegram bot that connects users to daily Jewish life — from 📜 Daf Yomi to 🕯 Shabbat times and 🌍 location-based Halachic data.

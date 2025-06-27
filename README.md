@@ -93,6 +93,7 @@ Live log output of your bot.
 | `make cs-fix`            | Fix code style using PHP-CS-Fixer              |
 | `make clean`             | Clean up cache, data, and vendor folders       |
 | `make gitattributes-check` | Normalize line endings using .gitattributes |
+| `make ps`                | Show the status of Docker containers           |
 
 ---
 
@@ -116,8 +117,7 @@ Fill in values like:
 
 Type `@YourBotUsername your_city_name` in any chat to:
 
-- Get your Daf Yomi for today
-- Set Shabbat timezones per user
+- Set Shabbat timezones
 
 ---
 

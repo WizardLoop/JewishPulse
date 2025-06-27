@@ -1,0 +1,9 @@
+services:
+  jewishpulse:
+    build: .
+    restart: always
+    init: true
+    tty: true
+    volumes:
+      - ./:/app
+    command: php /app/main.php

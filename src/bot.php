@@ -338,10 +338,11 @@ $location_save = $translate['location_save'] ?? '✅ Location saved successfully
             $geonameId = (int)$parts[1];
             UserLocation::setGeonameId($userId, $geonameId);
 
+$inputReplyToMessage = ['_' => 'inputReplyToMessage', 'reply_to_msg_id' => $message->id];
             $this->messages->sendMessage([
                 'peer' => $message->chatId,
                 'message' => $location_save,
-                'reply_to_msg_id' => $message->id,
+                'reply_to' => $inputReplyToMessage,
                 'parse_mode' => 'HTML'
             ]);
         }

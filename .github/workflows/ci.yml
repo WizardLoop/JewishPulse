@@ -40,17 +40,17 @@ jobs:
 
       - name: 🔢 Check /start command output
         run: |
-          docker-compose exec bot php -r "require 'vendor/autoload.php'; echo (new ShabatBot\\App\\Locales\\Lang(null))->t('StartCommand', 123456);"
+          docker-compose exec bot php -r "require 'vendor/autoload.php'; echo (new JewishPulse\\App\\Locales\\Lang(null))->t('StartCommand', 123456);"
 
       - name: 🌇 Test Shabbat time formatting
         run: |
-          docker-compose exec bot php -r "require 'vendor/autoload.php'; echo (new ShabatBot\\App\\Handlers\\ShabatTimes())->parseShabatData();"
+          docker-compose exec bot php -r "require 'vendor/autoload.php'; echo (new JewishPulse\\App\\Handlers\\ShabatTimes())->parseShabatData();"
 
       - name: 🌎 Check locale translation completeness
         run: |
           docker-compose exec bot php -r "
             \$files = glob('app/locales/*.json');
-            \$keys = array_keys(json_decode(file_get_contents('app/locales/he.json'), true));
+            \$keys = array_keys(json_decode(file_get_contents('src/locales/he.json'), true));
             foreach (\$files as \$file) {
               \$t = json_decode(file_get_contents(\$file), true);
               \$missing = array_diff(\$keys, array_keys(\$t));

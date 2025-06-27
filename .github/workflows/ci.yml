@@ -49,8 +49,8 @@ jobs:
       - name: 🌎 Check locale translation completeness
         run: |
           docker-compose exec bot php -r "
-            \$files = glob('app/locales/*.json');
-            \$keys = array_keys(json_decode(file_get_contents('src/locales/he.json'), true));
+            \$files = glob('src/Locales/*.json');
+            \$keys = array_keys(json_decode(file_get_contents('src/Locales/he.json'), true));
             foreach (\$files as \$file) {
               \$t = json_decode(file_get_contents(\$file), true);
               \$missing = array_diff(\$keys, array_keys(\$t));

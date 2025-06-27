@@ -43,15 +43,14 @@ cd JewishPulse
 #### 2️⃣ Install dependencies
 
 Install PHP dependencies using Docker:
-
 ```bash
-docker-compose run --rm composer install
+composer install
 ```
 
 #### 3️⃣ Launch the bot
 
 ```bash
-docker-compose up -d
+docker compose up --pull always -d
 ```
 
 The bot will start running in the background.
@@ -59,7 +58,7 @@ The bot will start running in the background.
 #### 🔍 View logs
 
 ```bash
-docker-compose logs -f
+docker compose logs
 ```
 
 Live log output of your bot.
@@ -70,18 +69,12 @@ Live log output of your bot.
 
 | Command                        | Description                                      |
 |--------------------------------|--------------------------------------------------|
-| `docker-compose build`         | Build the Docker image                          |
-| `docker-compose up -d`         | Start the bot in the background                |
-| `docker-compose down`          | Stop and remove the bot container              |
-| `docker-compose restart`       | Restart the bot quickly                        |
-| `docker-compose logs -f`       | View real-time bot logs                        |
-| `docker-compose exec bot sh`   | Access shell inside the Docker container       |
-| `docker-compose exec bot composer dump-autoload` | Reload Composer autoload |
-| `docker-compose exec bot vendor/bin/phpunit` | Run PHPUnit tests                              |
-| `docker-compose exec bot vendor/bin/phpcs` | Run PHP_CodeSniffer checks                     |
-| `docker-compose exec bot vendor/bin/php-cs-fixer fix` | Fix code style using PHP-CS-Fixer              |
-| `docker-compose run --rm bot make clean` | Clean up cache, data, and vendor folders       |
-| `docker-compose exec bot git-check` | Normalize line endings using .gitattributes |
+| `docker compose build`         | Build the Docker image                          |
+| `docker compose up --pull always -d`         | Start the bot in the background                |
+| `docker compose down`          | Stop and remove the bot container              |
+| `docker compose restart`       | Restart the bot quickly                        |
+| `docker compose logs`       | View real-time bot logs                        |
+| `docker compose exec bot composer dump-autoload` | Reload Composer autoload |
 | `docker-compose ps`            | Show the status of Docker containers           |
 
 ---
@@ -96,6 +89,8 @@ cp .env.example .env
 
 Fill in values like:
 
+- `API_ID`
+- `API_HASH`
 - `BOT_TOKEN`
 - `ADMIN_ID`
 - `GEONAMES_USERNAME`
@@ -119,7 +114,7 @@ This project uses **PHPUnit** for unit testing and **PHP_CodeSniffer** / **PHP-C
 To run all unit tests:
 
 ```bash
-docker-compose exec bot vendor/bin/phpunit
+docker compose exec bot vendor/bin/phpunit
 ```
 
 Tests live in the `/tests` directory and follow PSR standards.
@@ -129,13 +124,13 @@ Tests live in the `/tests` directory and follow PSR standards.
 Run PHP_CodeSniffer to check your code:
 
 ```bash
-docker-compose exec bot vendor/bin/phpcs
+docker compose exec bot vendor/bin/phpcs
 ```
 
 Auto-fix code style issues using PHP-CS-Fixer:
 
 ```bash
-docker-compose exec bot vendor/bin/php-cs-fixer fix
+docker compose exec bot vendor/bin/php-cs-fixer fix
 ```
 
 ---

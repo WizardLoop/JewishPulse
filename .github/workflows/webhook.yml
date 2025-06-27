@@ -1,31 +1,24 @@
-name: GitHub Release to Telegram
+name: Notify Telegram on Release
 
 on:
   release:
     types: [published]
 
 jobs:
-  send-to-telegram:
+  notify-telegram:
     runs-on: ubuntu-latest
-    
     steps:
-      - name: Checkout code
+      - name: Checkout Repository
         uses: actions/checkout@v3
 
-      - name: Set up PHP 8.2
-        uses: shivammathur/setup-php@v2
-        with:
-          php-version: '8.2'
+      - name: Install PHP (default on Ubuntu)
 
-      - name: Install dependencies
-        run: |
-          composer install
-
-      - name: Send release info to Telegram
+      - name: Send release notification to Telegram
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-          GITHUB_REPO_OWNER: ${{ secrets.REPO_OWNER }}
-          GITHUB_REPO_NAME: ${{ secrets.REPO_NAME }}
-        run: |
-          php webhook.php
+          RELEASE_NAME: ${{ github.event.release.name }}
+          RELEASE_TAG: ${{ github.event.release.tag_name }}
+          RELEASE_BODY: ${{ github.event.release.body }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+        run: php webhook.php

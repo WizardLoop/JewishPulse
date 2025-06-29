@@ -17,7 +17,6 @@ phpcs.xml export-ignore
 php-cs-fixer.dist.php export-ignore
 Makefile export-ignore
 .dockerignore export-ignore
-Dockerfile export-ignore
 composer.lock export-ignore
 
 README.md export-ignore

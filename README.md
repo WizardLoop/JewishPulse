@@ -5,7 +5,7 @@
 
 # ✡️✨ JewishPulse
 
-**JewishPulse** is a smart Telegram bot that connects users to daily Jewish life — from 📜 Daf Yomi to 🕯 Shabbat times and 🌍 location-based Halachic data.
+**JewishPulse** is a smart Telegram bot that connects users to daily Jewish life - from 📜 Daf Yomi to 🕯 Shabbat times and 🌍 location-based Halachic data.
 
 > ✡️✨ Time. Holiness. Connection.
 
@@ -76,7 +76,7 @@ Live log output of your bot.
 | `docker compose restart`       | Restart the bot quickly                        |
 | `docker compose logs`       | View real-time bot logs                        |
 | `docker compose exec bot composer dump-autoload` | Reload Composer autoload |
-| `docker-compose ps`            | Show the status of Docker containers           |
+| `docker compose ps`            | Show the status of Docker containers           |
 
 ---
 

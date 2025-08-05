@@ -72,7 +72,7 @@ Live log output of your bot.
 | `docker compose down`          | Stop and remove the bot container              |
 | `docker compose restart`       | Restart the bot quickly                        |
 | `docker compose logs`       | View real-time bot logs                        |
-| `docker compose exec bot composer dump-autoload` | Reload Composer autoload |
+| `docker compose exec jewishpulse composer dump-autoload` | Reload Composer autoload |
 | `docker compose ps`            | Show the status of Docker containers           |
 
 ---

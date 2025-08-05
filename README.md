@@ -1,5 +1,5 @@
 
-<img src="https://github.com/wizardloop/JewishPulse/raw/main/assets/JewishPulse.png" width="300" height="300" />
+<img src="https://github.com/wizardloop/JewishPulse/raw/main/assets/JewishPulse.gif" width="300" height="300" />
 
 ---
 

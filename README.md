@@ -112,7 +112,7 @@ This project uses **PHPUnit** for unit testing and **PHP_CodeSniffer** / **PHP-C
 To run all unit tests:
 
 ```bash
-docker compose exec bot vendor/bin/phpunit
+docker compose exec jewishpulse vendor/bin/phpunit
 ```
 
 Tests live in the `/tests` directory and follow PSR standards.
@@ -122,13 +122,13 @@ Tests live in the `/tests` directory and follow PSR standards.
 Run PHP_CodeSniffer to check your code:
 
 ```bash
-docker compose exec bot vendor/bin/phpcs
+docker compose exec jewishpulse vendor/bin/phpcs
 ```
 
 Auto-fix code style issues using PHP-CS-Fixer:
 
 ```bash
-docker compose exec bot vendor/bin/php-cs-fixer fix
+docker compose exec jewishpulse vendor/bin/php-cs-fixer fix
 ```
 
 ---

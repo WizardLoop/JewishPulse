@@ -15,9 +15,6 @@
 [![Code Style](https://img.shields.io/badge/Code_Style-PSR--12-blue.svg)](https://www.php-fig.org/psr/psr-12/)
 [![PHP 8.2+](https://img.shields.io/badge/PHP-8.2%2B-blue)](https://www.php.net/)
 
-[![Telegram](https://img.shields.io/badge/Channel-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/JewishPulse)
-[![Telegram](https://img.shields.io/badge/Group-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/Jewish_Pulse)
-
 [![Telegram](https://img.shields.io/badge/Official%20Bot-000000?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/JewishPulseBot)
 
 ---

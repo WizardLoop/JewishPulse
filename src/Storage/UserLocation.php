@@ -64,12 +64,12 @@ class UserLocation
     $file = self::$dataDir . "/$senderId/candles.json";
     
     if (!file_exists($file)) {
-        return 40; 
+        return 41; 
     }
 
     $data = json_decode(read($file), true);
 
-    return $data['candles'] ?? 40; 
+    return $data['candles'] ?? 41; 
 }
 
     public static function setCandleSetting(int $senderId, int $candlesMinutes): void {

@@ -1,4 +1,7 @@
 <?php
+
+namespace JewishPulse\Tests;
+
 use PHPUnit\Framework\TestCase;
 use JewishPulse\Locales\Lang;
 

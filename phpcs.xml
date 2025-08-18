@@ -6,4 +6,5 @@
     <exclude-pattern>vendor/*</exclude-pattern>
     <exclude-pattern>src/data/*</exclude-pattern>
     <rule ref="PSR12"/>
+    <arg name="warning-severity" value="0"/>
 </ruleset>

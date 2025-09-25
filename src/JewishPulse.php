@@ -804,22 +804,6 @@ unlink(__DIR__."/data/$filexmsgid1/media.txt");
 
 }
 
-function runJewishPulse(string $apiId, string $apiHash, string $botToken): void {
-    try {
-        $settings = new Settings;
-        $settings->setAppInfo(
-            (new \danog\MadelineProto\Settings\AppInfo)
-                ->setApiId((int)$apiId)
-                ->setApiHash($apiHash)
-        );
-
-        JewishPulse::startAndLoopBot(__DIR__ . '/bot.madeline', $botToken, $settings);
-
-    } catch (Throwable $e) {
-        echo "\nError: " . $e->getMessage() . "\n";
-    }
-}
-
 if (basename(__FILE__) === basename($_SERVER['SCRIPT_FILENAME'])) {
     die("Please run the bot from 'main.php'.");
 }

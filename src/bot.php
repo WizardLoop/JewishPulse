@@ -3,6 +3,8 @@
 the project created by @wizardloop                                                                                                                                                                                                                                                     
 */
 
+namespace JewishPulse;
+
 $autoload = __DIR__.'/../vendor/autoload.php';
 if (!file_exists($autoload)) {
     die("Autoload file not found. Please run 'composer install'.");

@@ -24,7 +24,9 @@
     }
   },
   "scripts": {
-    "test": "phpunit --configuration phpunit.xml"
+    "test": "phpunit --configuration phpunit.xml",
+    "lint": "phpcs --standard=phpcs.xml",
+    "fix": "php-cs-fixer fix --config=.php-cs-fixer.dist.php"
   },
   "license": "AGPL-3.0-only",
   "authors": [
